@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 项目的依赖关系及自身定义，parent是指父类的信息，引用父类的包，此处引用的是springboot默认依赖，groupId和artifactId在被引用时会用到，命名规范即可 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.xxm</groupId>
+    <artifactId>xxm</artifactId>
+    <version>0.0.1</version>
+    <name>xxm</name>
+    <!-- 相当于注释 -->
+    <description>Demo project for Spring Boot</description>
+
+    <!-- 设置项目的jdk版本，编码 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <!-- 子项目管理，添加子项目后要在此添加子项目名称，例：<module>xxm-interface</module> -->
+    <modules>
+    </modules>
+
+    <!-- 此处为添加依赖，parent一般只放置一些必要的jar包供子项目依赖使用，子项目根据自身所需引用相应的jar包 -->
+    <dependencies>
+        <!-- spring-boot-starter-web和spring-boot-starter-test为springboot核心包 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- lombok 在pojo实体中免get、set方法的编写，在打包的时候会自动添加get、set方法，缺省很多繁琐的操作和代码 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+    <!-- 此处一般是私服仓库的配置，如果没有私房仓库，不写 -->
+    <!--<repository>
+        <id>releases</id>
+        <url>http://10.1.193.100:8081/nexus/content/repositories/releases</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
