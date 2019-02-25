@@ -25,3 +25,8 @@
 /nbdist/
 /.nb-gradle/
 /.metadata/
+
+### Backup & Tools file ###
+*~
+*.cmd
+*.bat
