@@ -2,7 +2,7 @@ package com.xxm.dao;
 
 
 import com.xxm.entity.po.Test;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * Date 2019/5/6 22:59
  * Author wangpengxiang
  **/
-@Repository
+@Mapper
 public interface TestMapper {
 
     List<Test> findAll();
