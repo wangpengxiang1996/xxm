@@ -17,17 +17,15 @@ import java.util.List;
  * Autor wangpengxiang
  * Date 2019/5/6 23:05
  */
-@Api("集成mybatis测试controller")
+@Api("集成mybatis测试controller，作者：wangpengxiang")
 @RequestMapping("mybatis")
 @RestController
-public class MybatisController {
+public class MybatisController extends BaseController{
 
-    @Autowired
-    IMabatisService mybatisServiceImpl;
 
-    @ApiOperation(value="findAll", notes="测试swagger是否集成成功")
-    @RequestMapping(value="/findAll",method = RequestMethod.POST)
-    public List<Test> findAll(){
+    @ApiOperation(value="查找test表所有数据，作者：wangpengxiang", notes="测试swagger是否集成成功")
+    @RequestMapping(value="/findTestAll",method = RequestMethod.POST)
+    public List<Test> findTestAll(){
         return mybatisServiceImpl.findAll();
     }
 

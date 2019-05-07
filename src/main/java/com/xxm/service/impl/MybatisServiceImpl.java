@@ -15,11 +15,15 @@ import java.util.List;
  * Date 2019/5/6 23:23
  */
 @Service
-public class MybatisServiceImpl implements IMabatisService {
+public class MybatisServiceImpl extends BaseService implements IMabatisService {
 
-    @Autowired
-    TestMapper testMapper;
-
+    /***
+     * Description 查找Test表中的全部数据
+     * Date 2019/5/7 21:20
+     * Author wangpengxiang
+     * Param void
+     * return java.util.List<com.xxm.entity.po.Test>
+     **/
     @Override
     public List<Test> findAll() {
         return testMapper.findAll();
